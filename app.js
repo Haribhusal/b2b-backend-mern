@@ -21,9 +21,14 @@ const app = express();
 
 app.use("/uploads", express.static("uploads"));
 
+const allowedOrigins = [
+  "https://b2b-mern-frontend.vercel.app/", // Production URL
+  "http://localhost:5173", // Vite default development server URL
+];
+
 app.use(
   cors({
-    origin: "https://b2b-mern-frontend.vercel.app/", // Replace with your Vite development server URL or production URL
+    origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
