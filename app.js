@@ -22,8 +22,7 @@ const app = express();
 app.use("/uploads", express.static("uploads"));
 
 const allowedOrigins = [
-  "https://b2b-mern-frontend.vercel.app/", // Production URL
-  "http://localhost:5173", // Vite default development server URL
+  "https://b2b-mern-frontend.vercel.app", // Production URL
 ];
 
 app.use(
